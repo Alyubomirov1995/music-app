@@ -1,0 +1,72 @@
+@use '../../utils.scss';
+
+.item {
+   @include utils.flex-container(none, center, flex-start);
+   gap: 20px;
+   max-width: 512 px;
+   margin-bottom: 20px;
+
+}
+
+.image {
+   width: 82px;
+   height: 82px;
+   background-size: cover;
+   filter: drop-shadow(0px 8px 25px rgba(224, 219, 196, 0.90));
+   border-radius: 20px;
+
+}
+
+.actions {
+   @include utils.flex-container(none, center, center);
+   margin-left: auto;
+   gap: 10px;
+   align-self: flex-start;
+
+
+}
+
+.description {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.name {
+   @include utils.font(var(--text-color), Open Sans, 18px, normal, 600, normal)
+}
+
+.price{
+   @include utils.font(var(--primary-color), Open Sans, 16px, normal, 600, normal)
+}
+
+.minus {
+   @include utils.flex-container(none, center, center);
+   background: none;
+   border: 1px solid var(--primary-color);
+   border-radius: var(--b-r);
+   width: 29px;
+   height: 29px;
+}
+
+.plus {
+   @include utils.flex-container(none,center, center);
+   background: var(--primary-color);
+   border: 1px solid var(--primary-color);
+   border-radius: var(--b-r);
+   width: 29px;
+   height: 29px;
+}
+
+.remove {
+   @include utils.flex-container(none, center, center);
+   background: none;
+   border: none;
+   border-radius: var(--b-r);
+   width: 29px;
+   height: 29px;
+}
+
+.number {
+   @include utils.font(var(--text-color), Open Sans, 16px, normal, 600, normal)
+}

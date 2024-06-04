@@ -1,0 +1,92 @@
+@use '../../utils.scss';
+
+
+.layout {
+   @include utils.flex-container(none, none, none);
+   min-height: 100vh;
+   
+}
+
+.sidebar {
+   padding: 30px;
+   border-right: 1px solid var(--separator-color);
+   @include utils.flex-container(column, none, none);
+}
+
+.exit {
+   margin-top: auto;
+   @include utils.flex-container(none, center, center);
+   gap: 9px;
+}
+
+.menu {
+   @include utils.flex-container(column, none, none);
+   gap: 35px;
+   font-weight: 600;
+}
+
+.link {
+   @include utils.flex-container(none, none, center);
+   gap: 14px;
+   text-decoration: none;
+   color: var(--text-color);
+}
+
+.link:hover {
+   color: var(--primary-color);
+}
+
+.active {
+   color: var(--primary-color);
+}
+
+.user {
+   margin-bottom: 46px;
+
+}
+
+.avatar {
+   
+   filter: drop-shadow(0px 8px 40px rgba(255, 197,41, 0.25));
+}
+
+.name {
+   padding-top: 10px;
+   @include utils.font(var(--text-color), Open Sans, 20px, normal, 700, normal);
+   margin-top: -30px;
+}
+
+.email {
+   @include utils.font(#9ea1b1, Open Sans, 14px, normal, 400, normal);
+}
+
+.status {
+   padding-left: 40%;
+   border-radius: 10px;
+   border: 1px solid green;
+ color: green
+}
+
+.content {
+   padding: 40px 60px;
+   width: 100%;
+}
+
+.cart-count {
+   background: var(--primary-color);
+   @include utils.flex-container(none, center, center);
+   border-radius: var(--b-r);
+   width: 20px;
+   height: 20px;
+   font-size: 12px;
+   color: var(--white-color);
+}
+
+.piano {
+   display: flex;
+   height: 520px;
+   margin-top: -290px;
+   margin-left: 80px;
+   z-index: -1;
+   transform: scale(-1, 1)
+}
