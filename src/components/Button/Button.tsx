@@ -11,4 +11,5 @@ function Button({ children, className, appearence = 'small', ...props }: ButtonP
 	);
 }
 
+
 export default Button;

@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { loadState } from './storage';
 import axios, { AxiosError } from 'axios';
 import { PREFIX } from '../helpers/API.constants.ts';
-import { LoginResponse } from '../layout/Auth/auth.interface';
 import { Profile } from '../intefaces/user.interface';
 import { RootState } from './store';
 
@@ -27,7 +26,7 @@ const initialState: UserState = {
 export const login = createAsyncThunk('user/login', 
 	async (params: {email: string, password: string}) => {
 		try {
-			const { data } = await axios.post<LoginResponse>(`${PREFIX}/auth/login`, {
+			const { data } = await axios.post(`${PREFIX}/auth/login`, {
 				email: params.email,
 				password: params.password
 			});
@@ -43,7 +42,7 @@ export const login = createAsyncThunk('user/login',
 export const register = createAsyncThunk('user/register', 
 	async (params: {email: string, password: string, name: string}) => {
 		try {
-			const { data } = await axios.post<LoginResponse>(`${PREFIX}/auth/register`, {
+			const { data } = await axios.post(`${PREFIX}/auth/register`, {
 				email: params.email,
 				password: params.password,
 				name: params.name
